@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import ToDoListLayout from '../components/ToDoListLayout';
+import INITIAL_TASKS from '../constants/initialTasks';
 
 /**
  * @class ToDoList
@@ -6,20 +8,7 @@ import React, {useState} from 'react';
  * Main to do container where all tasks are saved.
  */
 const ToDoList = () => {
-    const [tasks, setTasks] = useState([
-        {
-            title: "Complete this project",
-            completed: false,
-        },
-        {
-            title: "Push it to GitHub",
-            completed: false,
-        },
-        {
-            title: "Don't worry, be happy",
-            complete: true,
-        }
-    ]);
+    const [tasks, setTasks] = useState(INITIAL_TASKS);
 
     /**
      * @param {string} title
@@ -34,8 +23,17 @@ const ToDoList = () => {
      */
     const completeTask = (index) => {
         const newTasks = [...tasks];
-        newTasks[index].complete = true;
-        setTasks(tasks);
+        newTasks[index].completed = true;
+        setTasks(newTasks);
+    };
+
+    /**
+     * @param {number} index
+     */
+    const removeTask = (index) => {
+        const newTask = [...tasks];
+        newTask.splice(index, 1);
+        setTasks(newTask);
     };
 
     return (
@@ -43,6 +41,7 @@ const ToDoList = () => {
             tasks={tasks}
             addTask={addTask}
             completeTask={completeTask}
+            removeTask={removeTask}
         />
     )
 };
