@@ -4,7 +4,6 @@ import Task from '../components/Task';
 import '../styles/ToDoListLayout.css';
 
 const ToDoListLayout = ({tasks, addTask, completeTask, removeTask}) => {
-    console.log('wow')
     return <Fragment>
         <h2 className={"toDoListHeader"}>Todo - items</h2>
         {/*<TaskCreator addTask={addTask} />*/}

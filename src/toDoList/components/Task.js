@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import '../styles/Task.css';
 
-const Task = ({task, index, completeTask, removeTask}) => (
-    <div className={"task"}>
-        {task.title}
+const Task = ({task: {title, completed}, index, completeTask, removeTask}) => {
+    const titleClassName = classnames({
+        'taskTitle': true,
+        'taskTitleLineThrough': completed
+    });
+
+    return <div className={"task"}>
+        <span className={titleClassName}>{title}</span>
         <button onClick={() => completeTask(index)}>Complete</button>
-    </div>
-);
+        <span onClick={() => removeTask(index)}>&#10008;</span>
+    </div>;
+};
 
 Task.propTypes = {
     task: PropTypes.object.isRequired,
