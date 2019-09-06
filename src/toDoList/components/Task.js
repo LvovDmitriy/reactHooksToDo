@@ -11,8 +11,10 @@ const Task = ({task: {title, completed}, index, completeTask, removeTask}) => {
 
     return <div className={"task"}>
         <span className={titleClassName}>{title}</span>
-        <button onClick={() => completeTask(index)}>Complete</button>
-        <span onClick={() => removeTask(index)}>&#10008;</span>
+        <div className={'taskControlButtons'}>
+            <button onClick={() => completeTask(index)}>Complete</button>
+            <span onClick={() => removeTask(index)}>&#10008;</span>
+        </div>
     </div>;
 };
 

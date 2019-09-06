@@ -7,6 +7,7 @@ const ToDoListLayout = ({tasks, addTask, completeTask, removeTask}) => {
     return <Fragment>
         <h2 className={"toDoListHeader"}>Todo - items</h2>
         {/*<TaskCreator addTask={addTask} />*/}
+        <div className={'tasksHolder'}>
         {
             tasks.map((task, index) => (
                 <Task
@@ -18,6 +19,7 @@ const ToDoListLayout = ({tasks, addTask, completeTask, removeTask}) => {
                 />
             ))
         }
+        </div>
     </Fragment>
 };
 

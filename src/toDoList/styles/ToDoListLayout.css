@@ -4,3 +4,12 @@
     font-weight: normal;
     font-size: 2.4em;
 }
+
+.tasksHolder {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}

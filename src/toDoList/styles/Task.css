@@ -1,3 +1,22 @@
+.task {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    margin: 10px 0;
+    max-width: 400px;
+    position: relative;
+}
+
 .taskTitleLineThrough {
     text-decoration: line-through;
+}
+
+.taskControlButtons {
+    position: absolute;
+    right: 0;
+    padding: 0 10px;
+}
+
+.taskControlButtons button, span {
+    margin: 0 10px;
 }
